@@ -3,23 +3,24 @@ import React, { useState } from "react";
 import "./Home.scss";
 
 const Home = () => {
-  const [messageHistory, setMessageHistory] = useState([]); // [ {prompt: "hello", response: "hi"}, {prompt: "how are you", response: "good"}
+  const [messageHistory, setMessageHistory] = useState([]);
   const [promptState, setPromptState] = useState("");
+
   const handlePrompt = (e) => {
     if (e.key === "Enter") {
-      setPromptState(e.target.value);
+      const currentPrompt = e.target.value;
+      setPromptState(currentPrompt);
 
       axios
         .post(`http://localhost:8080/chat`, {
-          prompt: e.target.value,
+          prompt: currentPrompt,
         })
         .then((res) => {
           console.log(res.data);
-          setMessageHistory([
-            ...messageHistory,
-            { question: prompt, response: res.data.content },
+          setMessageHistory((prevMessageHistory) => [
+            ...prevMessageHistory,
+            { question: currentPrompt, response: res.data.content },
           ]);
-          console.log(messageHistory);
         })
         .catch((err) => {
           console.log(err);
@@ -28,6 +29,8 @@ const Home = () => {
       e.target.value = "";
     }
   };
+
+  console.log(messageHistory);
 
   return (
     <div className="home">

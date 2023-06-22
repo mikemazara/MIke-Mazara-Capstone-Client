@@ -7,7 +7,7 @@ const Header = () => {
         <h1>Poke-Mechs</h1>
       </div>
       <div className="header__search">
-        <input type="text" placeholder="Search" />
+        <input type="select" placeholder="Search" />
       </div>
     </header>
   );
