@@ -30,7 +30,7 @@ const Home = () => {
     }
   };
 
-  console.log(messageHistory);
+  //   console.log(messageHistory);
 
   return (
     <div className="home">

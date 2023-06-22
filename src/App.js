@@ -1,13 +1,31 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import "./App.scss";
 
 function App() {
+  const [makes, setMake] = useState([]);
+  const [selectedMake, setSelectedMake] = useState("");
+  const [selectedYear, setSelectedYear] = useState("");
+  const [model, setModel] = useState([]);
+  const [selectedModel, setSelectedModel] = useState("");
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        <Header
+          makes={makes}
+          setMake={setMake}
+          selectedMake={selectedMake}
+          setSelectedMake={setSelectedMake}
+          selectedYear={selectedYear}
+          setSelectedYear={setSelectedYear}
+          model={model}
+          setModel={setModel}
+          selectedModel={selectedModel}
+          setSelectedModel={setSelectedModel}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/topfixes" element={<h1>About</h1>} />
