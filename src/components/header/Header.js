@@ -1,89 +1,36 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import birdMon from "../../assets/birdmon.jpg";
 import "./Header.scss";
+import { NavLink } from "react-router-dom";
 
-function Header({
-  makes,
-  setMake,
-  selectedMake,
-  setSelectedMake,
-  selectedYear,
-  setSelectedYear,
-  model,
-  setModel,
-  selectedModel,
-  setSelectedModel,
-}) {
-  const handleMakeChange = (e) => {
-    setSelectedMake(e.target.value);
-  };
-
-  const handleModelChange = (e) => {
-    setSelectedModel(e.target.value);
-  };
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8080/vehicles`)
-      .then((res) => {
-        setMake(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  useEffect(() => {
-    if (selectedMake) {
-      axios
-        .get(`http://localhost:8080/vehicles/${selectedMake}`)
-        .then((res) => {
-          setModel(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, [selectedMake]);
-
-  if (!makes) {
-    return <div>Loading...</div>;
-  }
-
+function Header() {
   return (
     <header className="header">
       <div className="header__logo">
+        <img src={birdMon} alt="logo" className="header__logo-image" />
+      </div>
+      <div className="header__title">
         <h1>Poke-Mechs</h1>
       </div>
-      <div className="header__search">
-        <select className="header__search__year">
-          <option value="">Select a Year</option>
-          <option value="2021">2021</option>
-        </select>
-        <select
-          className="header__search__make"
-          value={selectedMake}
-          onChange={handleMakeChange}
-        >
-          <option value="">Select a Make</option>
-          {makes.map((make) => (
-            <option key={make} value={make.id}>
-              {make}
-            </option>
-          ))}
-        </select>
-        <select
-          className="header__search__make"
-          value={selectedModel}
-          onChange={handleModelChange}
-        >
-          <option value="">Select a Model</option>
-          {model.map((model) => (
-            <option key={model} value={model.id}>
-              {model}
-            </option>
-          ))}
-        </select>
+      <div className="header__nav">
+        <ul className="header__nav__list">
+          <li className="header__nav__list__item">
+            <NavLink to="/" className="header__nav__list__item__link">
+              Home
+            </NavLink>
+          </li>
+          <li className="header__nav__list__item">
+            <NavLink to="/about" className="header__nav__list__item__link">
+              About
+            </NavLink>
+          </li>
+          <li className="header__nav__list__item">
+            <NavLink to="/login" className="header__nav__list__item__link">
+              Login/Signup
+            </NavLink>
+          </li>
+        </ul>
       </div>
     </header>
   );

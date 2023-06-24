@@ -2,34 +2,49 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState } from "react";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
+import Diagnostics from "./components/diagnostics/Diagnostics";
+import useSessionStorageState from "./components/diagnostics/useSessioonStorageState";
 import "./App.scss";
 
 function App() {
   const [makes, setMake] = useState([]);
-  const [selectedMake, setSelectedMake] = useState("");
-  const [selectedYear, setSelectedYear] = useState("");
+  const [selectedMake, setSelectedMake] = useSessionStorageState("make", "");
+  const [selectedYear, setSelectedYear] = useSessionStorageState("year", "");
   const [model, setModel] = useState([]);
-  const [selectedModel, setSelectedModel] = useState("");
+  const [selectedModel, setSelectedModel] = useSessionStorageState("model", "");
 
   return (
     <div className="App">
       <BrowserRouter>
-        <Header
-          makes={makes}
-          setMake={setMake}
-          selectedMake={selectedMake}
-          setSelectedMake={setSelectedMake}
-          selectedYear={selectedYear}
-          setSelectedYear={setSelectedYear}
-          model={model}
-          setModel={setModel}
-          selectedModel={selectedModel}
-          setSelectedModel={setSelectedModel}
-        />
+        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/topfixes" element={<h1>About</h1>} />
-          <Route path="/diagnostics" element={<h1>About</h1>} />
+          <Route
+            path="/"
+            element={
+              <Home
+                makes={makes}
+                setMake={setMake}
+                selectedMake={selectedMake}
+                setSelectedMake={setSelectedMake}
+                selectedYear={selectedYear}
+                setSelectedYear={setSelectedYear}
+                model={model}
+                setModel={setModel}
+                selectedModel={selectedModel}
+                setSelectedModel={setSelectedModel}
+              />
+            }
+          />
+          <Route
+            path="/diagnostics"
+            element={
+              <Diagnostics
+                selectedModel={selectedModel}
+                selectedMake={selectedMake}
+                selectedYear={selectedYear}
+              />
+            }
+          />
           <Route path="/related" element={<h1>About</h1>} />
           <Route path="/about" element={<h1>About</h1>} />
           <Route path="*" element={<h1>Not Found</h1>} />
