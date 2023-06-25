@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Diagnostics from "./components/diagnostics/Diagnostics";
-import useSessionStorageState from "./components/diagnostics/useSessioonStorageState";
+import useSessionStorageState from "./components/functions/useSessioonStorageState";
 import "./App.scss";
 
 function App() {

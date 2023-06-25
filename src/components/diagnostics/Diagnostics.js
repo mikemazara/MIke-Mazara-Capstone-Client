@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import useSessionStorageState from "./useSessioonStorageState";
+import useSessionStorageState from "../functions/useSessioonStorageState";
 import "./Diagnostics.scss";
-import MessageHistory from "./MessageHistory";
+import MessageHistory from "../message-history/MessageHistory";
 
 const Diagnostics = ({ selectedModel, selectedMake, selectedYear }) => {
   const [messageHistory, setMessageHistory] = useSessionStorageState(
