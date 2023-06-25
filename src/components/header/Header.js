@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import birdMon from "../../assets/birdmon.jpg";
+import birdMon from "../../assets/images/birdmon.jpg";
 import "./Header.scss";
 import { NavLink } from "react-router-dom";
 
