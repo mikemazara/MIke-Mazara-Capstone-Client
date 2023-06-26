@@ -20,16 +20,6 @@ function Header() {
               Home
             </NavLink>
           </li>
-          <li className="header__nav__list__item">
-            <NavLink to="/about" className="header__nav__list__item__link">
-              About
-            </NavLink>
-          </li>
-          <li className="header__nav__list__item">
-            <NavLink to="/login" className="header__nav__list__item__link">
-              Login/Signup
-            </NavLink>
-          </li>
         </ul>
       </div>
     </header>
