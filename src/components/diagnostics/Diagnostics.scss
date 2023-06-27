@@ -1,15 +1,47 @@
-.home{
+.diag{
     width: 100vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    padding-top: 5rem;
     padding-inline: 6vw;
+    background-color: rgba(57, 172, 178, 0.7);
     &__container{
         overflow: scroll;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        &__nav{
+            width: 100%;
+            height: 3rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            padding-inline: 6vw;
+            &__link{
+                width: 10rem;
+                height: 3rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: rgb(37, 44, 53);
+                text-decoration: none;
+                outline: none;
+                border: none;
+                background-color: #e1e1e1;
+                border-radius: 0.5rem;
+                margin-right: 1rem;
+                cursor: pointer;
+                &:hover{
+                    background-color: rgba(100, 116, 139, 0.7);
+                }
+            }
+        }
 
     }
     &__container__card{
@@ -24,13 +56,13 @@
             &__title{
                 font-size: 2rem;
                 font-weight: 700;
-                color: #000;
+                color: rgb(37, 44, 53);
             }
             &__prompt-title{
                 display: block;
                 font-size: 1.5rem;
                 font-weight: 700;
-                color: #000;
+                color: rgb(37, 44, 53);
             }
             &__prompt-input{
                 width: 50vw;

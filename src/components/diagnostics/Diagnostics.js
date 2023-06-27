@@ -1,8 +1,9 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import React, { useEffect } from "react";
 import useSessionStorageState from "../functions/useSessioonStorageState";
-import "./Diagnostics.scss";
 import MessageHistory from "../message-history/MessageHistory";
+import "./Diagnostics.scss";
 
 const Diagnostics = ({ selectedModel, selectedMake, selectedYear }) => {
   const [messageHistory, setMessageHistory] = useSessionStorageState(
@@ -41,27 +42,36 @@ const Diagnostics = ({ selectedModel, selectedMake, selectedYear }) => {
       });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log("messageHistory", messageHistory);
   }, [messageHistory]);
 
   return (
-    <div className="home">
-      <div className="home__container">
-        <div className="home__container__card">
-          <h2 className="home__container__card__title">
-            Welcome to the Jungle.. of cars.. and tools n stuff.. yea
+    <div className="diag">
+      <div className="diag__container">
+        <div className="diag__container__nav">
+          <NavLink
+            className="diag__container__nav__link"
+            to="/"
+            activeClassName="diag__container__nav__link--active"
+          >
+            Back
+          </NavLink>
+        </div>
+        <div className="diag__container__card">
+          <h2 className="diag__container__card__title">
+            {selectedYear} {selectedMake} {selectedModel}
           </h2>
         </div>
         <MessageHistory messageHistory={messageHistory} />
-        <div className="home__container__card">
-          <label className="home__container__card__prompt-title">
+        <div className="diag__container__card">
+          <label className="diag__container__card__prompt-title">
             Car trouble?
           </label>
           <input
-            className="home__container__card__prompt-input"
+            className="diag__container__card__prompt-input"
             type="text"
-            placeholder="Wass yo probem"
+            placeholder="Pocket mechanic at your service!"
             onChange={handleChange}
             value={promptState}
             onKeyDown={handleKeyDown}

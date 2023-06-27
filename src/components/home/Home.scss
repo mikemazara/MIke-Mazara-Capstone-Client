@@ -8,6 +8,17 @@
     padding-top:5rem;
     padding-inline: 10vw;
     background-color: rgba(57, 172, 178, 0.7);
+    &__card{
+        background-image: url(../../assets/images/white-paper-background.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 2rem;
+        border: none;
+        border-radius: 0.5rem;
+        height: 23rem;
+        margin-top: 20rem;
+    }
     &__title{
         font-size: 3rem;
         font-weight: 700;

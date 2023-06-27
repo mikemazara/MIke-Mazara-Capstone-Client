@@ -16,7 +16,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route
             path="/"
@@ -48,6 +47,7 @@ function App() {
           <Route path="/about" element={<h1>About</h1>} />
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
+        <Header />
       </BrowserRouter>
     </div>
   );

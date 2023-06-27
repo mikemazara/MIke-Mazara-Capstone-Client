@@ -1,3 +1,6 @@
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import "./MessageHist.scss";
 
 export default function MessageHistory({ messageHistory }) {
@@ -5,7 +8,7 @@ export default function MessageHistory({ messageHistory }) {
     <div className="message-history">
       {messageHistory.map((message, i) => {
         return (
-          <div
+          <Box
             key={i}
             className={`message-history__message ${
               message.role === "user"
@@ -13,27 +16,29 @@ export default function MessageHistory({ messageHistory }) {
                 : "message-history__message--assistant"
             }`}
           >
-            <h3
-              className={`message-history__message-role ${
-                message.role === "user"
-                  ? "message-history__message--question"
-                  : "message-history__message--answer"
-              }`}
-            >
-              {message.role === `user` ? "You" : "Chewy"}
-            </h3>
-            <p className="message-history__message-content">
-              {message.content.split("---").map((line, i) => {
-                return (
-                  <span key={i}>
-                    <br />
-                    {line}
-                    <br />
-                  </span>
-                );
-              })}
-            </p>
-          </div>
+            <Paper elevation={3} className="message-history__message-paper">
+              <h3
+                className={`message-history__message-role ${
+                  message.role === "user"
+                    ? "message-history__message--question"
+                    : "message-history__message--answer"
+                }`}
+              >
+                {message.role === `user` ? "You" : "Chewy"}
+              </h3>
+              <p className="message-history__message-content">
+                {message.content.split("---").map((line, i) => {
+                  return (
+                    <span key={i}>
+                      <br />
+                      {line}
+                      <br />
+                    </span>
+                  );
+                })}
+              </p>
+            </Paper>
+          </Box>
         );
       })}
     </div>
