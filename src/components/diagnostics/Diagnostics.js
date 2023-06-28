@@ -1,6 +1,6 @@
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import useSessionStorageState from "../functions/useSessioonStorageState";
@@ -18,7 +18,6 @@ const Diagnostics = ({ selectedModel, selectedMake, selectedYear }) => {
   const year = selectedYear;
   const handleChange = (e) => {
     setPromptState(e.target.value);
-    console.log("promptState", promptState);
   };
 
   const handleKeyDown = (e) => {
@@ -35,7 +34,6 @@ const Diagnostics = ({ selectedModel, selectedMake, selectedYear }) => {
     const newMessage = { role: "user", content: promptState };
     setPromptState("");
     setMessageHistory((messageHistory) => [...messageHistory, newMessage]);
-    console.log(" after messageHistory setting", messageHistory);
 
     axios
       .post(`http://localhost:8080/chat`, {

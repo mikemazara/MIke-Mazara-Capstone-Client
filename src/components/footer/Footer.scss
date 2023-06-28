@@ -9,10 +9,10 @@
     justify-content : flex-start;
     align-content: flex-start;
     position: absolute;
-    top:80vh;
+    top:90vh;
     left: 4vw;
     @include mobile{
-        top:95vh;
+        top:98vh;
         left: 2vw;
     }
     &__logo{

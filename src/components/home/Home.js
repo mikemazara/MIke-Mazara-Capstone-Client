@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import * as React from "react";
-import { BootstrapInput } from "../functions/StyleSelect";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { BootstrapInput } from "../functions/StyleSelect";
 
 const Home = ({
   makes,
@@ -48,7 +47,7 @@ const Home = ({
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [setMake]);
 
   useEffect(() => {
     if (selectedMake) {
@@ -61,7 +60,7 @@ const Home = ({
           console.log(err);
         });
     }
-  }, [selectedMake]);
+  }, [selectedMake, setModel]);
 
   if (!makes) {
     return <div>Loading...</div>;
