@@ -1,74 +1,32 @@
-# Getting Started with Create React App
+#Poke-Mechs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Poke-Mechs is an openAI pocket mechanic app designed to assist users with their car-related questions. Whether you're someone who has encountered their first flat tire or a mechanic in need of quick access to diagnostic steps and specifications, Poke-Mechs is here to help. With the power of artificial intelligence, Poke-Mechs provides you with valuable insights and guidance on various car-related topics.
 
-## Available Scripts
+##Features
+AI Assistance: Poke-Mechs leverages advanced AI technology to offer personalized support and guidance for your car-related queries. Simply input your question or concern, and Poke-Mechs will provide you with relevant information and recommendations.
 
-In the project directory, you can run:
+Troubleshooting: Encounter a car problem and not sure what to do next? Poke-Mechs offers a comprehensive troubleshooting feature that walks you through diagnostic steps for common issues. From engine problems to electrical faults, you can rely on Poke-Mechs to help you identify potential causes and suggest solutions.
 
-### `npm i` followed by
+Specifications: Need quick access to car specifications? Poke-Mechs provides a vast database of vehicle specifications, including engine details, tire sizes, recommended fluids, and more. Whether you're a car enthusiast or a mechanic, this feature allows you to find accurate and up-to-date information on a wide range of vehicles.
 
-### `npm start`
+User-Friendly Interface: The Poke-Mechs app offers an intuitive and user-friendly interface, making it easy for both beginners and experienced users to navigate through the features. The app's design focuses on simplicity and efficiency, allowing you to find the information you need quickly.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Installation
+To install and run Poke-Mechs locally on your device, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Clone the repository:
 
-### `npm test`
+Copy code
+npm install
+Start the application:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##Technologies Used
+React: The frontend of Poke-Mechs is built using React, a popular JavaScript library for building user interfaces.
 
-### `npm run build`
+Node.js: The backend of Poke-Mechs is powered by Node.js, a JavaScript runtime environment, providing server-side functionality and API integration.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+OpenAI GPT-3.5: Poke-Mechs utilizes the power of OpenAI's GPT-3.5 language model to provide AI assistance and generate helpful responses to user queries.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Express.js, React-Router-Dom, Axios, Javascript, Sass
 
 # MIke-Mazara-Capstone-Client
