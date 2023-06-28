@@ -1,10 +1,12 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
 .message-history{
     width: 90vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     &__message{
-        width: 60%;
         text-align: left;
         font-size: 1.5rem;
         line-height: 1.4;
@@ -12,25 +14,30 @@
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 1rem;
-        background-color: #e1e1e1;
+        padding: 2rem;
+        background-color: $primary-grey;
         border-radius: 0.5rem;
-        box-shadow: 0 0.25rem 0.25rem #aaa;
-        margin-bottom: 1rem;
+        margin-bottom:2rem;
+        &-paper{
+            padding: 1rem;
+        }
         &-role{
             font-size: 1.5rem;
             font-weight: 700;
             width: 100%;
-            color: #000;
+            color: rgb(37, 44, 53);
             margin-bottom: 0.5rem;
         }
         &--user{
-            background-color: #fff;
+            background-color: $primary-grey;
             margin-left: 40%;
+            max-width: 50rem;
+            
         }
         &--assistant{
-            background-color: #e1e1e1;
+            background-color: rgba(100, 116, 139, 0.7);
             margin-right: 40%;
+            max-width: 60rem;
         }
     }
 

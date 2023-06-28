@@ -1,7 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./Home.scss";
+import * as React from "react";
+import { BootstrapInput } from "../functions/StyleSelect";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 const Home = ({
   makes,
@@ -61,45 +67,68 @@ const Home = ({
     return <div>Loading...</div>;
   }
   return (
-    <div className="home">
-      <h1 className="home__title">Welcome to the Poke-car repair centre</h1>
+    <div className="home__card">
+      <h1 className="home__title">
+        Welcome to Poke-Mechs! The Pocket Mechanic App
+      </h1>
       <div className="home__select-options">
-        <select
-          className="home__select"
-          value={selectedYear}
-          onChange={handleYearChange}
-        >
-          <option value="">Select a Year</option>
-          {years.map((year) => (
-            <option key={year} value={year}>
-              {year}
-            </option>
-          ))}
-        </select>
-        <select
-          className="home__select"
-          value={selectedMake}
-          onChange={handleMakeChange}
-        >
-          <option value="">Select a Make</option>
-          {makes.map((make) => (
-            <option key={make} value={make.id}>
-              {make}
-            </option>
-          ))}
-        </select>
-        <select
-          className="home__select"
-          value={selectedModel}
-          onChange={handleModelChange}
-        >
-          <option value="">Select a Model</option>
-          {model.map((model) => (
-            <option key={model} value={model.id}>
-              {model}
-            </option>
-          ))}
-        </select>
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="home-simple-select-label">Year</InputLabel>
+            <Select
+              labelId="home-simple-select-label"
+              id="home-simple-select"
+              value={selectedYear}
+              label="Year"
+              onChange={handleYearChange}
+              input={<BootstrapInput />}
+            >
+              {years.map((year) => (
+                <MenuItem key={year} value={year}>
+                  {year}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="home-simple-select-label">Make</InputLabel>
+            <Select
+              labelId="home-simple-select-label"
+              id="home-simple-select"
+              value={selectedMake}
+              label="Make"
+              onChange={handleMakeChange}
+              input={<BootstrapInput />}
+            >
+              {makes.map((make) => (
+                <MenuItem key={make} value={make}>
+                  {make}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
+        <Box sx={{ minWidth: 110 }} className="">
+          <FormControl fullWidth>
+            <InputLabel id="home-simple-select-label">Model</InputLabel>
+            <Select
+              labelId="home-simple-select-label"
+              id="home-simple-select"
+              value={selectedModel}
+              label="Model"
+              onChange={handleModelChange}
+              input={<BootstrapInput />}
+            >
+              {model.map((model) => (
+                <MenuItem key={model} value={model}>
+                  {model}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
       </div>
       {selectedMake && selectedModel && selectedYear ? (
         <Link to="/diagnostics" className="home__link">
@@ -107,7 +136,7 @@ const Home = ({
         </Link>
       ) : (
         <div className="home__link-disabled">
-          Please Select a Make, Model, and Year to Continue
+          Please Select a Make, Model, and Year
         </div>
       )}
     </div>

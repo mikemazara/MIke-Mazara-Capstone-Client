@@ -1,8 +1,12 @@
+@use "./styles/variables" as *;
+@use "./styles/mixins" as *;
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(100, 116, 139);
 
 }
 
@@ -16,4 +20,8 @@
     background-repeat: no-repeat;
     background-position: center;
     overflow: scroll;
+    @include mobile{
+        height: 110vh;
+    }
+
 }

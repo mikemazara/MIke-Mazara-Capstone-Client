@@ -1,4 +1,5 @@
 import Home from "../components/home/Home";
+import "../components/home/Home.scss";
 
 const HomePage = ({
   makes,
@@ -13,7 +14,7 @@ const HomePage = ({
   setSelectedModel,
 }) => {
   return (
-    <div>
+    <div className="home">
       <Home
         makes={makes}
         setMake={setMake}
