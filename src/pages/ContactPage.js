@@ -1,7 +1,9 @@
+import contactimg from "../assets/images/Poke-Mechs.jpg";
+
 const ContactPage = () => {
   return (
     <div>
-      <h1>Contact Page</h1>
+      <img src={contactimg} alt="contact info" />
     </div>
   );
 };
