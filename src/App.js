@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState } from "react";
-import Header from "./components/header/Header";
-import Home from "./components/home/Home";
-import Diagnostics from "./components/diagnostics/Diagnostics";
+import Footer from "./components/footer/Footer";
+import HomePage from "./pages/HomePage";
+import DiagnosticsPage from "./pages/DiagnosticsPage";
+import ContactPage from "./pages/ContactPage";
 import useSessionStorageState from "./components/functions/useSessioonStorageState";
 import "./App.scss";
 
@@ -20,7 +21,7 @@ function App() {
           <Route
             path="/"
             element={
-              <Home
+              <HomePage
                 makes={makes}
                 setMake={setMake}
                 selectedMake={selectedMake}
@@ -37,17 +38,17 @@ function App() {
           <Route
             path="/diagnostics"
             element={
-              <Diagnostics
+              <DiagnosticsPage
                 selectedModel={selectedModel}
                 selectedMake={selectedMake}
                 selectedYear={selectedYear}
               />
             }
           />
-          <Route path="/about" element={<h1>About</h1>} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
-        <Header />
+        <Footer />
       </BrowserRouter>
     </div>
   );

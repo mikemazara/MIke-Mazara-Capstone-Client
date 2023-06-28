@@ -1,3 +1,6 @@
+@use "./styles/variables" as *;
+@use "./styles/mixins" as *;
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -17,4 +20,8 @@
     background-repeat: no-repeat;
     background-position: center;
     overflow: scroll;
+    @include mobile{
+        height: 110vh;
+    }
+
 }
